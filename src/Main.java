@@ -16,8 +16,7 @@ public class Main
             y = bs.binSearch((int) n,ds.getArray(),0,ds.getArray().size());
         }
 
-        Long endBS = System.nanoTime();
-        System.out.println("Time taken to binary search            = " + (endBS-startTime) );
+        System.out.println("Time taken to binary search            = " + (System.nanoTime()-startTime)+" nano seconds" );
         Long startRBS = System.nanoTime();
 
         for (long n : ds.getSearchList())
@@ -25,6 +24,9 @@ public class Main
             y = rbs.randomizedBinSearch((int) n,ds.getArray(),0,ds.getArray().size());
         }
 
-        System.out.println("Time taken to randomized binary search = " + (System.nanoTime()-startRBS) );
+        System.out.println("Time taken to randomized binary search = " + (System.nanoTime()-startRBS) +" nano seconds" );
+
+        System.out.println("Array size     = "+ds.getArray().size());
+        System.out.println("Searched count = "+ds.getSearchList().size());
     }
 }
